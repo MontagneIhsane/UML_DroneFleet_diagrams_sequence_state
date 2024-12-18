@@ -1,0 +1,14 @@
+@startuml
+participant Utilisateur
+participant Système
+participant Drone
+participant Mission
+
+Utilisateur -> Système: Sélectionner une mission
+Système -> Système: Vérifier les drones disponibles
+Système -> Drone: Affecter la mission
+Drone -> Mission: execute()
+Mission -> Drone: Résultat d'exécution
+Drone -> Système: Retour d'état
+Système -> Utilisateur: Confirmation ou rapport d'erreur
+@enduml

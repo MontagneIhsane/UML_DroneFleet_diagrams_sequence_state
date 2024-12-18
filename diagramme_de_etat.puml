@@ -1,0 +1,12 @@
+@startuml
+[*] --> Disponible : Drone initialisé
+Disponible --> En mission : Mission assignée
+En mission --> Disponible : Mission terminée
+Disponible --> En maintenance : Maintenance planifiée
+En mission --> Défectueux : Panne détectée
+Défectueux --> Disponible : Réparation réussie
+Disponible --> Défectueux : Panne au sol
+En maintenance --> Disponible : Maintenance terminée
+En maintenance --> Défectueux : Problème détecté
+[*] --> Défectueux : État initial si drone défectueux
+@enduml
